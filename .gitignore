@@ -1,0 +1,28 @@
+# =============================================================
+# postiz-selfhost — gitignore
+# Strategy: ignore EVERYTHING by default, then explicitly un-ignore
+# only the files we want to track. This keeps the upstream Postiz
+# source out of the repo while tracking our deployment overlay.
+# =============================================================
+
+# Ignore everything
+/*
+
+# Un-ignore our customizations
+!.gitignore
+!.env.example
+!README.md
+!docker-compose.yaml
+!patches/
+
+# Always ignore secrets even if accidentally un-ignored
+.env
+*.local
+*.secret
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+*.swp
+.vscode/
+.idea/
